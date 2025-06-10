@@ -137,9 +137,9 @@ const logo = {
     }
 
     .nav-link {
-        padding: 1rem;
+        padding: 1.5em 1em;
         font-size: 1.1rem;
-        font-weight: 300;
+        font-weight: 500;
         color: #4a2f1a;
         text-decoration: none;
         transition: color 0.3s ease;
@@ -168,5 +168,61 @@ const logo = {
 
     .cta-button {
         display: none;
+    }
+
+    @media (width >= 992px) {
+        .hamburger {
+            display: none;
+        }
+
+        .navbar-logo img {
+            height: 50px;
+        }
+
+        .navbar-links {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: auto;
+            margin-top: 0;
+            padding: 0;
+            gap: 2em;
+            background: none;
+            box-shadow: none;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #FFF1CF;
+        }
+
+        .overlay {
+            display: none;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1em 1.5em;
+            background-color: #800020;
+            color: #FFF1CF;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #a00020;
+        }
+    }
+    @media (width <= 526px) {
+        .navbar-logo img {
+            height: 40px;
+        }
+        .navbar-links {
+            right: -100%;
+            width: 60%;
+        }
     }
 </style>
