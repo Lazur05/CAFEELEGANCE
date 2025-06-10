@@ -20,8 +20,8 @@ const logo = {
         
         <div class="navbar-links">
             <a href="/" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">O nas</a>
-            <a href="#coffee" class="nav-link">Wybierz Kawę!</a>
+            <a href="/#about" class="nav-link">O nas</a>
+            <a href="/#coffee" class="nav-link">Wybierz Kawę!</a>
             <a href="/contact" class="nav-link">Kontakt</a>
         </div>
         
@@ -36,6 +36,12 @@ const logo = {
     const navbarLinks = document.querySelector('.navbar-links');
     const navLinks = document.querySelectorAll('.nav-link');
     const overlay = document.querySelector('.overlay');
+    
+    const closeMenu = () => {
+        hamburger?.classList.remove('open');
+        navbarLinks?.classList.remove('active');
+        overlay?.classList.remove('active');
+    }
 
     hamburger?.addEventListener('click', () => {
         hamburger.classList.toggle('open')
@@ -44,16 +50,12 @@ const logo = {
     });
 
     overlay?.addEventListener('click', () => {
-        navbarLinks?.classList.remove('active');
-        hamburger?.classList.remove('open');
-        overlay.classList.remove('active');
+        closeMenu();
     });
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navbarLinks?.classList.remove('active');
-            hamburger?.classList.remove('open');
-            overlay?.classList.remove('active');
+            closeMenu();
         });
     });
 
@@ -117,6 +119,7 @@ const logo = {
         right: -50%;
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 40%;
         height: 100dvh;
         margin-top: 1em;
