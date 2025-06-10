@@ -1,8 +1,46 @@
 ---
+import Hero from '../components/Hero.astro';
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
 	<Navbar/>
+	<div class="wrapper">
+		<Hero/>
+	</div>
 </Layout>
+
+<style>
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@media (width > 1440px) {
+	.wrapper {
+		max-width: 1400px;
+	}
+}
+@media (width <= 1200px) {
+	.wrapper {
+		max-width: 860px;
+	}
+}
+@media (width <= 992px) {
+	.wrapper {
+		max-width: 670px;
+	}
+}
+@media (width <= 768px) {
+	.wrapper {
+		max-width: 500px;
+	}
+}
+@media (width <= 576px) {
+	.wrapper {
+		max-width: 400px;
+	}
+}
+
+</style>

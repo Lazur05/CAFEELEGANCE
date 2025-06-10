@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+const coffeeCup = {
+  src: '/coffee-cup.png',
+  alt: 'Coffee Cup',
+};
+---
+
+<section class="hero">
+    <Image
+        src={coffeeCup.src}
+        alt={coffeeCup.alt}
+        width={600}
+        height={600}
+        class="hero-image"
+    />
+</section>
+
+
+<style>
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+</style>
