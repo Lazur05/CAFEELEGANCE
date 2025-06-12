@@ -6,12 +6,17 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<Navbar/>
-	<div class="wrapper">
-		<Hero/>
-	</div>
+	<main>
+		<div class="wrapper">
+			<Hero/>
+		</div>
+	</main>
 </Layout>
 
 <style>
+main {
+	position: relative;
+}
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;

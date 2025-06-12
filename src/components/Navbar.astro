@@ -26,10 +26,10 @@ const logo = {
         </div>
         
         <a href="/" class="cta-button">Zarezerwuj teraz!</a>
-
     </div>
-    <div class="overlay"></div>
+    
 </nav>
+<div class="overlay"></div>
 
 <script>
     const hamburger = document.querySelector('.hamburger');
@@ -69,6 +69,7 @@ const logo = {
         top: 0;
         padding: 1em 0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 2000;
     }
     
     .navbar-container {
@@ -78,7 +79,6 @@ const logo = {
         justify-content: space-between;
         margin: 0 auto;
         padding: 0 1.5rem;
-        z-index: 1100;
     }
     
     .navbar-logo img {
@@ -96,7 +96,6 @@ const logo = {
         background: transparent;
         border: none;
         padding: 0;
-        z-index: 1100;
         span {
             width: 100%;
             height: 3px;
@@ -114,22 +113,19 @@ const logo = {
     }
 
     .navbar-links {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 10%;
         right: -50%;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 40%;
         height: 100dvh;
-        margin-top: 1em;
         padding: 1rem;
         background-color: #f5e8d3;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         list-style: none;
-        overflow: hidden;
         transition: right .4s ease-in-out;
-        z-index: 1100;
     }
 
     .navbar-links.active {
@@ -158,7 +154,7 @@ const logo = {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.4s ease, visibility 0.4s ease;
-        z-index: 1000;
+        z-index: 1100;
     }
 
     .overlay.active {
